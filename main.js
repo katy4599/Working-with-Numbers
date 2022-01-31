@@ -1,17 +1,25 @@
 import input from 'input';
 
-async function main() {
-    const one = await input.text('Please enter a number.');
-    const two = await input.text('Please enter another number.');
-    const numone = Number(one);
-    const numtwo = Number(two);
+async function isEven(num) {
+    const val = (num % 2);
+    if (val == 0) {
+        console.log(`${num} is even!`);
+    }else {
+        console.log(`${num} is odd!`);
+    }
+  
+}
 
-    console.log(`${numone} + ${numtwo} = ${numone + numtwo}`);
-    console.log(`${numone} - ${numtwo} = ${numone - numtwo}`);
-    console.log(`${numone} * ${numtwo} = ${numone * numtwo}`);
-    console.log(`${numone} / ${numtwo} = ${numone / numtwo}`);
-    console.log(`${numone} % ${numtwo} = ${numone % numtwo}`);
-    console.log(`${numone} ** ${numtwo} = ${numone ** numtwo}`);
+async function main() {
+    const maxStr = await input.text('Enter a number');
+    const max = Number(maxStr);
+    let i = 0;
+
+    while (i < max) {
+        isEven(i);
+        i +=1;
+    }
 }
 
 main()
+
